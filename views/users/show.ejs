@@ -1,0 +1,38 @@
+<%- include("../partials/header") %>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<h1 style = "text-transform:capitalize;">
+				<%= user.firstName + " " + user.lastName %>
+			</h1>
+			<div class="thumbnail">
+				<img src="<%= user.avatar %>" alt="user profile image">
+				<div class="caption">
+					<a href="mailto:<%= user.email %>"><i class="fas fa-envelope"></i> <%= user.email %></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-8">
+			<h3 id="profile-post">
+				<%= user.username %>' s post
+			</h3>
+			<% restaurants.forEach(function(restaurant){ %>
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<a href="/restaurants/<%= restaurant._id%>">
+							<img src="<%= restaurant.image %>">
+						</a>
+						<div class="caption">
+							<h4>
+								<%= restaurant.name %>
+							</h4>
+						</div>
+					</div>
+				</div>
+			<% }) %>
+			
+		</div>
+	</div>
+</div>
+
+<%- include("../partials/footer") %>

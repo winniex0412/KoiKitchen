@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>KoiKitchen</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/stylesheets/main.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container-fluid">
+				<div class="navbar-header hidden-xs">
+					<a class="navbar-brand navbar-custom-text" href="/"><i class="fas fa-fish"></i> KoiKitchen</a>
+				</div>
+				<div id="myNavbar">
+					<ul class="nav navbar-nav hidden-xs">
+						<li class="nav-item">
+							<a class="nav-home navbar-custom-text" href="/restaurants">Home</a>
+						 </li>
+						<li>
+							<p>
+								<form action="/restaurants" method="GET" class="form-inline">
+									<div class="form-group">
+										<input type="text" name="search" placeholder="Restaurant key words..." class="form-control">
+										<input type="submit" value="Search" class="btn btn-default" >
+									</div>
+								</form>
+							</p>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<% if (!currentUser) { %>
+							<li><a class="navbar-custom-text col-xs-6 col-sm-12" href="/login">Login</a></li>
+							<li><a class="navbar-custom-text col-xs-6 col-sm-12" href="/register">Sign Up</a></li>
+						<% } else { %>
+							<li><a class="navbar-custom-text hidden-xs">Signed In As <%= currentUser.username %></a></li>
+							<li><a class="navbar-custom-text col-xs-6 col-sm-12" href="/users/<%= currentUser._id %>">Profile</a></li>
+							<li><a class="navbar-custom-text col-xs-6 col-sm-12" href="/logout">Logout</a></li>
+						<% } %>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="container" id="flash_message">
+			<% if(error && error.length > 0){ %>
+			<!-- exist or not an empty array -->
+				<div class="alert alert-danger" role="alert">
+					<%= error %>
+				</div>
+			<% } %>
+			<% if(success && success.length > 0){ %>
+				<div class="alert alert-success" role="alert">
+					<%= success %>
+				</div>
+			<% } %>
+		</div>
+		
+		

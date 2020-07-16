@@ -1,0 +1,81 @@
+.thumbnail img {
+	width: 100%;
+}
+
+.thumbnail {
+	padding: 0;
+}
+
+.thumbnail .caption-full {
+	padding: 9px;
+}
+
+.delete-form {
+	display: inline;
+}
+
+.jumbotron {
+	background-image: url("https://images.unsplash.com/photo-1526317405575-b992efc46796?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1157&q=80");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center;
+	opacity: 0.8;
+	margin-bottom: 50px;
+	margin-top: -30px;
+}
+
+.jumbotron h1 {
+	font-family: 'Archivo Black', sans-serif;
+	padding-top: 100px;
+	font-size: 600%;
+	color: white;
+	height: 200px;
+	margin-bottom:0px;
+}
+
+.jumbotron p:nth-of-type(1) {
+	font-family: 'Archivo Black', sans-serif;
+	margin-top: -15px;
+	padding-bottom: 20px;
+	color: white;
+}
+
+.jumbotron a {
+	margin: 30px 0px;
+	text-align: center;
+}
+
+.navbar-default {
+	background: none;
+	border: none;
+	z-index: 1;
+	margin-bottom: 30px;
+	background-color: #D5574C;
+}
+
+.navbar-custom-text {
+	color: white !important;
+}
+
+#guidance-sentence {
+	color: gray;
+}
+
+#guidance-hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+#profile-post {
+	margin-bottom: 22px;
+	padding-left: 15px;
+}
+
+/* Google Maps */
+#map {
+	height: 400px;
+	width: 100&;
+}
