@@ -27,8 +27,11 @@ router.get("/", function(req, res){
 			} else {
 				if (allRestaurants.length < 1) {
 					req.flash("error", "There is no match according to your search, please try again!");
+					res.redirect("/restaurants");
+				} else {
+					res.render("restaurants/index", {restaurants: allRestaurants});
 				}
-				res.render("restaurants/index", {restaurants: allRestaurants});
+				
 			}
 		});
 	} else {
