@@ -26,6 +26,7 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
 var url = process.env.DATABASEURL || 'mongodb://localhost:27017/koikitchen';
+// var url = 'mongodb://localhost:27017/koikitchen';
 mongoose.connect(url);
 
 app.use(bodyParser.urlencoded({extended: true}));

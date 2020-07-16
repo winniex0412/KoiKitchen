@@ -16,6 +16,11 @@
 		<div class="col-md-9">
 			<div class="thumbnail">
 				<img class="img-responsive" src="<%= restaurant.image %>">
+				<div class="text-center">
+					<p id="picture-copyright">
+						Copyright belongs to the original author.
+					</p>
+				</div>
 				<div class="caption-full">
 					<h4 class="pull-right">
 						$<%= restaurant.price %>/person
@@ -36,6 +41,7 @@
 						
 						<span class="pull-right"><%= restaurant.date %></span>
 					</p>
+					
 					
 					<% if (currentUser && restaurant.author.id.equals(currentUser._id)) { %>
 						<a class="btn btn-xs btn-warning" href="/restaurants/<%= restaurant._id%>/edit">Edit</a>
