@@ -27,12 +27,6 @@ mongoose.set('useCreateIndex', true);
 
 var url = process.env.DATABASEURL || 'mongodb://localhost:27017/koikitchen';
 mongoose.connect(url);
-// mongoose.connect('mongodb://localhost:27017/yelp_camp_v12');
-// mongoose.connect('mongodb+srv://winnie:pswd130@cluster0-qejba.mongodb.net/<dbname>?retryWrites=true&w=majority').then(() => {
-// 	console.log("Connect to DB!");
-// }).catch(err => {
-// 	console.log("ERROR: ", err.message);
-// });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
